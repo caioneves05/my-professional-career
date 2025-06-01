@@ -1,0 +1,89 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Including essential packages for formatting
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{titlesec}
+
+% Configuring fonts and layout for ATS readability
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% Customizing section headers for clarity
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+% Defining a custom itemize environment for achievements
+\newlist{achievements}{itemize}{1}
+\setlist[achievements]{label=$\cdot$, leftmargin=*, itemsep=2pt}
+
+% Beginning of the document
+\begin{document}
+
+% Header with contact information
+\begin{center}
+    \textbf{\Large Full Stack \& Mobile Developer} \\
+    \vspace{5pt}
+    Guarulhos, São Paulo, Brazil \\
+    +55 11 99962-9173 | +55 11 97525-2946 \\
+    \href{https://www.linkedin.com/in/caioneves05}{linkedin.com/in/caioneves05} |
+    \href{https://github.com/caioneves05}{github.com/caioneves05} |
+    \href{http://caioneves.tech}{caioneves.tech}
+\end{center}
+
+% Summary Section
+\section{Summary}
+Dedicated Full Stack and Mobile Developer with extensive experience in building scalable, high-performance web and mobile applications using TypeScript, JavaScript, React Native, Next.js, NestJS, and GraphQL. Proficient in backend development with Java, Spring Boot, Node.js, MongoDB, PostgreSQL, and Kafka, and skilled in cloud infrastructure with AWS (S3, Lambda, ECS, ECR, SQS, SNS). Expert in implementing Domain-Driven Design (DDD), Clean Code, and CI/CD pipelines to deliver robust solutions. Experienced in version control with Git, ensuring efficient collaboration and code management. Passionate about optimizing performance, automating processes, and enhancing user experience through innovative software solutions.
+
+% Technical Skills Section
+\section{Technical Skills}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Frontend \& Mobile}: TypeScript, JavaScript, React Native, Next.js, Angular, Tailwind CSS, Expo
+    \item \textbf{Backend \& APIs}: Java, Spring Boot, Node.js, NestJS, GraphQL, MongoDB, PostgreSQL, Kafka, Jest
+    \item \textbf{Cloud \& DevOps}: AWS (S3, Lambda, ECS, ECR, SQS, SNS), Docker, Git, CI/CD pipelines
+\end{itemize}
+
+% Professional Experience Section
+\section{Professional Experience}
+
+\textbf{Full Stack Developer - Mid-Level} \hfill Feb 2025 – Present \\
+\textit{RUK, Guarulhos, São Paulo, Brazil}
+\begin{achievements}
+    \item Developed optimized audio processing pipelines using Python and AWS Lambda, integrating with S3 and ECR to meet business objectives, achieving 95\% accuracy in automated validations.
+    \item Created solutions for employee time tracking validation through audio analysis using TypeScript and Node.js, automating processes and reducing manual errors by 60\%.
+    \item Implemented containerized microservices with Docker and AWS ECS, optimizing infrastructure costs and increasing system reliability by 30\%.
+    \item Reduced audio processing time from 7 seconds to 2.5 seconds by deploying AWS Lambda with Docker images in Amazon ECR, utilizing a cost-effective pay-per-request model.
+\end{achievements}
+
+\textbf{Full Stack Developer} \hfill Sep 2023 – Dec 2024 \\
+\textit{Mobi Logística, Guarulhos, São Paulo, Brazil}
+\begin{achievements}
+    \item Architected scalable systems using NestJS, GraphQL, and MongoDB, ensuring 99.9\% availability and efficient handling of large-scale data queries.
+    \item Optimized mobile applications with React Native, Tailwind CSS, and Expo, integrating interactive graphics to reduce view loading time by 30\%.
+    \item Enhanced a logistics delivery application with an offline-first approach using React Native and TypeScript, reducing data synchronization time by 50\% and enabling continuous operation in low-connectivity areas.
+    \item Implemented global state management and caching strategies with JavaScript and Redux, ensuring reliable offline functionality and improved user experience.
+\end{achievements}
+
+\textbf{Software Developer - Intern} \hfill Oct 2022 – Aug 2023 \\
+\textit{CreditHub, São Paulo, São Paulo, Brazil}
+\begin{achievements}
+    \item Supported the CreditHub platform with Java and Spring Boot, improving service stability and maintaining 99\% uptime.
+    \item Developed and documented new microservices using Node.js and PostgreSQL, enhancing platform scalability and maintainability.
+    \item Resolved daily operational issues, utilizing Jest for unit testing to ensure robust code quality and reduce bug incidence by 40\%.
+\end{achievements}
+
+% Education Section
+\section{Education}
+\textbf{Systems Analysis and Development} \hfill [Graduation Year] \\
+\textit{Centro Universitário Eniac, Guarulhos, São Paulo, Brazil}
+
+\textbf{High School} \hfill [Graduation Year] \\
+\textit{E.E. Homero Rubens de Sá, Guarulhos, São Paulo, Brazil}
+
+\end{document}
