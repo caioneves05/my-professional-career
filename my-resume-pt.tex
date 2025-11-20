@@ -1,6 +1,6 @@
 \documentclass[11pt,letterpaper]{article}
 
-% Incluindo pacotes essenciais para formatação
+% Essential packages for formatting
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -10,23 +10,19 @@
 \usepackage{xcolor}
 \usepackage{titlesec}
 
-% Configurando fontes e layout para legibilidade em ATS
+% Font and layout settings for ATS readability
 \renewcommand{\familydefault}{\sfdefault}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{6pt}
 
-% Personalizando cabeçalhos de seção para clareza
+% Custom section headers for clarity
 \titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
 \titlespacing*{\section}{0pt}{12pt}{6pt}
 
-% Definindo um ambiente itemize personalizado para conquistas
-\newlist{achievements}{itemize}{1}
-\setlist[achievements]{label=$\cdot$, leftmargin=*, itemsep=2pt}
-
-% Início do documento
+% Document starts here
 \begin{document}
 
-% Cabeçalho com informações de contato
+% Header with contact information
 \begin{center}
     \textbf{\Large Engenheiro de Software Full Stack \& Desenvolvedor Mobile} \\
     \vspace{5pt}
@@ -37,54 +33,58 @@
     \href{http://caioneves.tech}{caioneves.tech}
 \end{center}
 
-% Seção de Resumo
+% Summary section
 \section{Resumo}
-Sou Engenheiro de Software Full Stack e Desenvolvedor Mobile, com experiência no desenvolvimento de aplicações web e mobile escaláveis, focadas em desempenho e boa experiência do usuário. Atuo com TypeScript, JavaScript, React Native, Next.js, NestJS e GraphQL, além de backend em Java (Spring Boot, Spring Security, Spring Data JPA, Spring MVC, Mockito), Node.js, MongoDB, PostgreSQL e Kafka. Tenho conhecimentos em infraestrutura de nuvem utilizando serviços da AWS, como S3, Lambda, ECS, ECR, SQS e SNS.
+Sou Engenheiro de Software Full Stack e Desenvolvedor Mobile com forte experiência no design de sistemas distribuídos escaláveis, arquiteturas cloud-native e aplicativos móveis de alta performance. Domínio Java (Spring Boot), TypeScript, Node.js, React Native e serviços AWS (Lambda, ECS, ECR, SQS, SNS). Trabalho com DDD, Microsserviços, Clean Architecture, automação CI/CD e padrões de segurança (JWT, OAuth2). Entrego consistentemente melhorias mensuráveis em performance, confiabilidade e experiência do usuário.
 
-No dia a dia, aplico boas práticas de desenvolvimento, como Domain-Driven Design (DDD), Clean Code e integração contínua (CI/CD), buscando entregar soluções confiáveis e de fácil manutenção. Possuo experiência com controle de versão usando Git e colaboração em times ágeis. Gosto de atuar em projetos que proponham desafios, onde seja possível otimizar processos, melhorar desempenho e criar soluções que gerem valor real para o usuário e para o negócio.
-
-% Seção de Competências Técnicas
-\section{Competências Técnicas}
+% Technical Skills section
+\section{Habilidades Técnicas}
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Frontend \& Mobile}: TypeScript, JavaScript, React Native, Nextjs, Angular, Tailwind CSS, Expo
-    \item \textbf{Backend \& APIs}: Java, Spring Boot, Spring Security, Spring Data JPA, Spring MVC, Mockito,  Spring Data, Spring Cloud Gateway / Hibernate,  Node.js, NestJS, GraphQL, MongoDB, PostgreSQL, Kafka, Jest
-    \item \textbf{Nuvem \& DevOps}: AWS (S3, Lambda, ECS, ECR, SQS, SNS), Docker, Git, pipelines CI/CD
+    \item \textbf{Linguagens \& Mobile}: Java 17, TypeScript, JavaScript, Python, React Native, Expo.
+    \item \textbf{Frontend}: Next.js, React.js, Angular, Tailwind CSS, HTML5, CSS3.
+    \item \textbf{Backend}: Spring Boot (Security, Data, JPA), Node.js, NestJS, GraphQL, REST APIs, Microsserviços, Clean Architecture.
+    \item \textbf{Bancos de Dados}: PostgreSQL (SQL), MongoDB (NoSQL), Redis, Kafka.
+    \item \textbf{Cloud \& DevOps}: AWS (S3, Lambda, ECS, ECR, API Gateway, SQS, SNS), Docker, Kubernetes, Pipelines CI/CD, Git, Maven, Gradle, GitHub Actions.
+    \item \textbf{Testes \& Qualidade}: JUnit, Jest, Testing Library, Testes de Integração, Testes Unitários, Automação de Testes.
+    \item \textbf{Segurança \& Autenticação}: JWT, OAuth2, PKI (ICP-Brasil), Criptografia, Segurança de APIs.
 \end{itemize}
 
-% Seção de Experiência Profissional
+% Professional Experience section
 \section{Experiência Profissional}
 
-\textbf{Desenvolvedor Full Stack - Pleno} \hfill Fev 2025 – Atual \\
+\textbf{Desenvolvedor Full Stack - Pleno} \hfill Fev 2025 – Presente \\
 \textit{RUK, Guarulhos, São Paulo, Brasil}
-\begin{achievements}
-    \item Desenvolvi pipelines otimizados de processamento de áudio usando Python e AWS Lambda, integrando com S3 e ECR para atender aos objetivos de negócios, alcançando 95\% de precisão em validações automatizadas.
-    \item Criei soluções para validação de registros de ponto de funcionários por meio de análise de áudio, utilizando TypeScript e Nodejs, automatizando processos e reduzindo erros manuais em 60\%.
-    \item Implementei microsserviços conteinerizados com Docker e AWS ECS, otimizando custos de infraestrutura e aumentando a confiabilidade do sistema em 30\%.
-    \item Reduzi o tempo de processamento de áudio de 7 segundos para 2,5 segundos ao implantar AWS Lambda com imagens Docker no Amazon ECR, utilizando um modelo econômico de pagamento por solicitação.
-\end{achievements}
+\begin{itemize}[leftmargin=*]
+    \item Desenvolvi um microsserviço seguro de \textbf{Assinatura Digital} utilizando \textbf{Java}, Spring Boot e Bouncy Castle, garantindo conformidade total com a \textbf{ICP-Brasil} e assegurando validade jurídica no processamento automatizado de documentos.
+    \item Criei pipelines escaláveis de processamento de áudio usando \textbf{Python}, \textbf{AWS Lambda} e S3, atingindo \textbf{95\% de precisão} em validações automáticas e reduzindo o tempo de revisão manual em 70\%.
+    \item Otimizei a performance serverless ao reduzir a latência ponta a ponta em \textbf{65\%} (7s para 2.5s) por meio de ajustes avançados em AWS Lambda e otimização de imagens no \textbf{Amazon ECR}.
+    \item Conteinerizei e orquestrei microsserviços utilizando \textbf{Docker} e \textbf{AWS ECS}, aumentando a confiabilidade do sistema em \textbf{30\%} e reduzindo o tempo de implantação em 40\%.
+    \item Desenvolvi um sistema automatizado de validação de ponto usando \textbf{Node.js}, \textbf{TypeScript} e PostgreSQL, diminuindo erros de auditoria em \textbf{60\%} e reduzindo consideravelmente o esforço operacional.
+\end{itemize}
 
 \textbf{Desenvolvedor Full Stack} \hfill Set 2023 – Dez 2024 \\
 \textit{Mobi Logística, Guarulhos, São Paulo, Brasil}
-\begin{achievements}
-    \item Construí sistemas escaláveis usando NestJS, GraphQL, MongoDB e PostgreSQL, garantindo disponibilidade e manipulação eficiente de consultas de dados em larga escala.
-    \item Construí e otimizei aplicações móveis com Typescript, React Native, Tailwind CSS e Expo, integrando gráficos interativos para reduzir o tempo de carregamento de visualizações em 30\%.
-    \item Aprimorei uma aplicação de entrega logística com abordagem offline-first utilizando estados globais e cache assíncrono com React Native e TypeScript, reduzindo o tempo de sincronização de dados em 50\% e possibilitando operação contínua em áreas de baixa conectividade.
-\end{achievements}
+\begin{itemize}[leftmargin=*]
+    \item Projetei sistemas backend escaláveis utilizando \textbf{NestJS}, \textbf{GraphQL} e PostgreSQL, garantindo consistência e alta disponibilidade com \textbf{99\% de uptime}.
+    \item Desenvolvi e otimizei aplicativos mobile com \textbf{React Native} e Expo, aplicando técnicas avançadas de renderização que reduziram o tempo de carregamento das telas em \textbf{30\%}.
+    \item Implementei uma arquitetura \textbf{offline-first} utilizando mecanismos de cache e armazenamento assíncrono, reduzindo o tempo de sincronização em \textbf{50\%} e assegurando operação em ambientes de baixa conectividade.
+    \item Melhorei o desempenho de APIs ao otimizar consultas e estratégias de cache, reduzindo a latência em 25\% em endpoints críticos.
+\end{itemize}
 
-\textbf{Desenvolvedor de Software - Estágio} \hfill Out 2022 – Ago 2023 \\
-\textit{CreditHub, São Paulo, São Paulo, Brasil}
-\begin{achievements}
-    \item Apoiei a plataforma CreditHub com Java e Spring Boot, melhorando a estabilidade do serviço e mantendo 99\% de tempo de atividade.
-    \item Desenvolvi e documentei novos microsserviços usando Node.js e PostgreSQL, aprimorando a escalabilidade e a manutenibilidade da plataforma.
-    \item Resolvi problemas operacionais diários, utilizando Jest para testes unitários para garantir a qualidade robusta do código e reduzir a incidência de bugs em 40\%.
-\end{achievements}
+\textbf{Estagiário de Desenvolvimento de Software} \hfill Out 2022 – Ago 2023 \\
+\textit{CreditHub, São Paulo, Brasil}
+\begin{itemize}[leftmargin=*]
+    \item Mantive e evoluí microsserviços distribuídos usando \textbf{Java} e \textbf{Spring Boot}, contribuindo para manter \textbf{99\%+ de uptime} nos sistemas principais.
+    \item Desenvolvi e mantive \textbf{APIs REST} com Node.js e PostgreSQL, ampliando a escalabilidade, estabilidade e velocidade de desenvolvimento da plataforma.
+    \item Implementei fluxos de testes automatizados com \textbf{Jest}, \textbf{JUnit} e Testes de Integração, aumentando a cobertura de testes e reduzindo defeitos em produção em \textbf{40\%}.
+\end{itemize}
 
-% Seção de Educação
-\section{Educação}
-\textbf{Análise e Desenvolvimento de Sistemas} \hfill Fev 2022 - Ago 2024 \\
+% Education section
+\section{Formação Acadêmica}
+\textbf{Tecnólogo em Análise e Desenvolvimento de Sistemas} \hfill Fev 2022 - Ago 2024 \\
 \textit{Centro Universitário Eniac, Guarulhos, São Paulo, Brasil}
 
-\textbf{Ensino Médio} \hfill Dez 2021 \\
+\textbf{Ensino Médio Completo} \hfill Dez 2021 \\
 \textit{E.E. Homero Rubens de Sá, Guarulhos, São Paulo, Brasil}
 
 \end{document}
