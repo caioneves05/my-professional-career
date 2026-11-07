@@ -1,11 +1,32 @@
 \documentclass[10pt,letterpaper]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
+\usepackage{iftex}
+\ifXeTeX
+  % XeLaTeX/Tectonic: Unicode fonts, ligatures off for clean ATS text
+  \usepackage{fontspec}
+  \defaultfontfeatures{Ligatures={NoCommon}}
+  \setmainfont{lmroman10}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+  \setsansfont{lmsans10}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-oblique,BoldItalicFont=*-boldoblique]
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
 \usepackage[margin=0.7in]{geometry}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\ifPDFTeX\DisableLigatures[f]{encoding=*}\fi
+\usepackage[hidelinks,pdfauthor={Caio Neves},pdftitle={Caio Neves - Senior Backend Engineer Resume}]{hyperref}
 \usepackage{titlesec}
+
+% ATS: map glyphs to Unicode for clean text extraction (pdfLaTeX)
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+\pagestyle{empty}
+% ATS: avoid hyphenated (split) keywords
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
 
 \renewcommand{\familydefault}{\sfdefault}
 \setlength{\parindent}{0pt}
@@ -28,18 +49,20 @@
 
 % Summary
 \section{PROFESSIONAL SUMMARY}
-Full Stack Software Engineer with 4+ years of experience building scalable, resilient, and high-performance systems. Strong expertise in microservices, cloud-native applications, and mobile development using Java (Spring Boot), TypeScript (Node.js), React Native, and AWS.
+Senior Backend Engineer with 4+ years of experience building scalable, resilient, and high-performance systems. Strong expertise in Java (Spring Boot), microservices, and cloud-native applications on AWS, with Kafka for asynchronous messaging, Kubernetes for orchestration, and observability with OpenTelemetry. Also experienced with TypeScript (Node.js) and React Native.
 
 Experienced in API integrations, data pipelines, and large-scale data processing, delivering performance improvements of 30\%--70\%. Proficient in Clean Architecture, Domain-Driven Design (DDD), and application security best practices.
 
 % Skills
 \section{TECHNICAL SKILLS}
 \textbf{Languages:} Java, TypeScript, JavaScript, Python \\
-\textbf{Frontend \& Mobile:} React Native, Expo, Next.js, React.js, Angular, Tailwind CSS \\
 \textbf{Backend:} Spring Boot, Node.js, NestJS, GraphQL, REST APIs, Microservices \\
-\textbf{Databases:} PostgreSQL, MongoDB, Redis, Kafka \\
+\textbf{Messaging:} Kafka \\
 \textbf{Cloud \& DevOps:} AWS (Lambda, ECS, S3, API Gateway, SQS, SNS), Docker, Kubernetes, Terraform, CI/CD \\
-\textbf{Testing \& Security:} JUnit, Jest, OAuth2, JWT, Cryptography, API Security
+\textbf{Observability:} OpenTelemetry \\
+\textbf{Databases:} PostgreSQL, MongoDB, Redis \\
+\textbf{Testing \& Security:} JUnit, Jest, OAuth2, JWT, Cryptography, API Security \\
+\textbf{Frontend \& Mobile:} React Native, Expo, Next.js, React.js, Angular, Tailwind CSS
 
 % Experience
 \section{PROFESSIONAL EXPERIENCE}
@@ -48,6 +71,7 @@ Experienced in API integrations, data pipelines, and large-scale data processing
 \textit{MJV Technology \& Innovation (Bradesco Seguros), Brazil}
 \begin{itemize}[leftmargin=*, itemsep=2pt]
     \item Architected and developed reusable observability libraries based on Hexagonal Architecture and SOLID principles, standardizing structured logging and OpenTelemetry across multiple engineering teams.
+    \item Instrumented microservices with OpenTelemetry through the observability library, enabling distributed tracing and trace-to-log correlation across services.
     \item Designed a decoupled logging platform supporting multiple providers (Pino, Winston) and observability backends (Loki, Elastic, Datadog, CloudWatch), enabling plug-and-play integrations.
     \item Implemented trace correlation, automatic sensitive-data redaction, and standalone modules with 80\%+ test coverage, replacing tightly coupled legacy implementations.
     \item Led the design and implementation of an Ed25519 request-signing solution for service-to-service authentication, eliminating security vulnerabilities identified during penetration testing.
@@ -55,7 +79,7 @@ Experienced in API integrations, data pipelines, and large-scale data processing
     \item Designed and maintained high-availability microservices supporting Bradesco Seguros insurance platforms, ensuring scalability, resilience, and operational excellence.
 \end{itemize}
 
-\textbf{Software Engineer (Mid-Level)} \hfill Dez 2025 -- May 2026 \\
+\textbf{Software Engineer (Mid-Level)} \hfill Dec 2025 -- May 2026 \\
 \textit{Juri Ativos Judiciais, Brazil}
 \begin{itemize}[leftmargin=*, itemsep=2pt]
     \item Implemented resilient API integrations with Circuit Breaker and retry mechanisms, reducing downtime by 40\%.
@@ -65,14 +89,15 @@ Experienced in API integrations, data pipelines, and large-scale data processing
     \item Applied Clean Architecture and DDD to improve maintainability and team onboarding.
 \end{itemize}
 
-\textbf{Full Stack Developer (Mid-Level)} \hfill Jan 2025 -- Dez 2025 \\
+\textbf{Full Stack Developer (Mid-Level)} \hfill Jan 2025 -- Dec 2025 \\
 \textit{RUK, Guarulhos, Brazil}
 \begin{itemize}[leftmargin=*, itemsep=2pt]
     \item Built a secure digital signature microservice (Spring Boot, Bouncy Castle) compliant with ICP-Brasil.
     \item Developed scalable audio pipelines (Python, AWS Lambda, S3), achieving 95\% accuracy and reducing manual review by 70\%.
-    \item Reduced latency by 65\% (7s $\rightarrow$ 2.5s) through serverless and container optimizations.
+    \item Reduced latency by 65\% (7s to 2.5s) through serverless and container optimizations.
     \item Containerized microservices with Docker and ECS, improving reliability by 30\% and deployment time by 40\%.
     \item Developed a time tracking validation system (Node.js, TypeScript, PostgreSQL), reducing audit errors by 60\%.
+    \item Used Kafka as the backbone for asynchronous communication between microservices, decoupling synchronous flows, with Kubernetes as the orchestration layer to deploy and scale those services.
 \end{itemize}
 
 \textbf{Full Stack Developer} \hfill Sep 2023 -- Dec 2024 \\
@@ -82,6 +107,23 @@ Experienced in API integrations, data pipelines, and large-scale data processing
     \item Improved mobile app performance (React Native, Expo), reducing load time by 40\%.
     \item Designed offline-first architecture, reducing sync time by 50\% in low-connectivity scenarios.
     \item Optimized GraphQL queries with Redis caching, reducing latency by 35\% and DB load by 45\%.
+    \item Used Kafka as the backbone for asynchronous communication between microservices, decoupling synchronous flows, with Kubernetes as the orchestration layer to deploy and scale those services.
+\end{itemize}
+
+\textbf{Software Developer Intern} \hfill Oct 2022 -- Sep 2023 \\
+\textit{CreditHub, Brazil}
+\begin{itemize}[leftmargin=*, itemsep=2pt]
+    \item Supported the company's core service platform (Credit Hub), creating and enhancing services with technical documentation.
+    \item Resolved day-to-day platform issues, maintaining service stability.
+\end{itemize}
+
+% Projects
+\section{PROJECTS}
+\begin{itemize}[leftmargin=*, itemsep=2pt]
+    \item \textbf{Toqui:} Document management app, from a multi-tenant backend to an app approved on both stores (iOS, Android, web); 1,000+ downloads, 4.4-star App Store rating. \href{https://apps.apple.com/br/app/toqui/id6466649690}{App Store} | \href{https://play.google.com/store/apps/details?id=com.toquiapp}{Google Play}
+    \item \textbf{Ruk Sign:} Legally binding digital signatures compliant with ICP-Brasil, with 4 signing modes.
+    \item \textbf{Ruk Time:} Time tracking with photo and audio proof and configurable shift rules.
+    \item \textbf{Live Chat:} Real-time chat with live presence, voice messages, and attachments across 5 microservices.
 \end{itemize}
 
 % Education
@@ -91,6 +133,6 @@ Centro Universitário Eniac -- Guarulhos, Brazil
 
 % Languages
 \section{LANGUAGES}
-Portuguese (Native) \quad | \quad English (Intermediate)
+Portuguese (Native) \quad | \quad English (Advanced)
 
 \end{document}

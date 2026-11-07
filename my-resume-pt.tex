@@ -1,11 +1,32 @@
 \documentclass[10pt,letterpaper]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
+\usepackage{iftex}
+\ifXeTeX
+  % XeLaTeX/Tectonic: Unicode fonts, ligatures off for clean ATS text
+  \usepackage{fontspec}
+  \defaultfontfeatures{Ligatures={NoCommon}}
+  \setmainfont{lmroman10}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+  \setsansfont{lmsans10}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-oblique,BoldItalicFont=*-boldoblique]
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
 \usepackage[margin=0.7in]{geometry}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\ifPDFTeX\DisableLigatures[f]{encoding=*}\fi
+\usepackage[hidelinks,pdfauthor={Caio Neves},pdftitle={Caio Neves - Currículo Engenheiro Backend Sênior}]{hyperref}
 \usepackage{titlesec}
+
+% ATS: map glyphs to Unicode for clean text extraction (pdfLaTeX)
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+\pagestyle{empty}
+% ATS: avoid hyphenated (split) keywords
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
 
 \renewcommand{\familydefault}{\sfdefault}
 \setlength{\parindent}{0pt}
@@ -28,18 +49,20 @@
 
 % Summary
 \section{RESUMO PROFISSIONAL}
-Engenheiro de Software Full Stack com mais de 4 anos de experiência no desenvolvimento de sistemas escaláveis, resilientes e de alta performance. Sólida experiência em microsserviços, aplicações cloud-native e desenvolvimento mobile utilizando Java (Spring Boot), TypeScript (Node.js), React Native e AWS.
+Engenheiro Backend Sênior com mais de 4 anos de experiência no desenvolvimento de sistemas escaláveis, resilientes e de alta performance. Sólida experiência em Java (Spring Boot), microsserviços e aplicações cloud-native na AWS, com Kafka para mensageria assíncrona, Kubernetes para orquestração e observabilidade com OpenTelemetry. Também possui experiência com TypeScript (Node.js) e React Native.
 
 Experiência com integrações de APIs, pipelines de dados e processamento de grandes volumes de informações, entregando melhorias de desempenho entre 30\% e 70\%. Domínio de Clean Architecture, Domain-Driven Design (DDD) e boas práticas de segurança de aplicações.
 
 % Skills
 \section{COMPETÊNCIAS TÉCNICAS}
 \textbf{Linguagens:} Java, TypeScript, JavaScript, Python \\
-\textbf{Frontend \& Mobile:} React Native, Expo, Next.js, React.js, Angular, Tailwind CSS \\
 \textbf{Backend:} Spring Boot, Node.js, NestJS, GraphQL, APIs REST, Microsserviços \\
-\textbf{Banco de Dados:} PostgreSQL, MongoDB, Redis, Kafka \\
+\textbf{Mensageria:} Kafka \\
 \textbf{Cloud \& DevOps:} AWS (Lambda, ECS, S3, API Gateway, SQS, SNS), Docker, Kubernetes, Terraform, CI/CD \\
-\textbf{Testes \& Segurança:} JUnit, Jest, OAuth2, JWT, Criptografia, Segurança de APIs
+\textbf{Observabilidade:} OpenTelemetry \\
+\textbf{Banco de Dados:} PostgreSQL, MongoDB, Redis \\
+\textbf{Testes \& Segurança:} JUnit, Jest, OAuth2, JWT, Criptografia, Segurança de APIs \\
+\textbf{Frontend \& Mobile:} React Native, Expo, Next.js, React.js, Angular, Tailwind CSS
 
 % Experience
 \section{EXPERIÊNCIA PROFISSIONAL}
@@ -48,6 +71,7 @@ Experiência com integrações de APIs, pipelines de dados e processamento de gr
 \textit{MJV Technology \& Innovation (Bradesco Seguros), Brasil}
 \begin{itemize}[leftmargin=*, itemsep=2pt]
     \item Arquitetou e desenvolveu bibliotecas reutilizáveis de observabilidade baseadas em Arquitetura Hexagonal e princípios SOLID, padronizando logs estruturados e OpenTelemetry entre múltiplos times de engenharia.
+    \item Instrumentou microsserviços com OpenTelemetry por meio da biblioteca de observabilidade, viabilizando rastreamento distribuído (distributed tracing) e correlação entre traces e logs entre serviços.
     \item Projetou uma plataforma de logging desacoplada com suporte a múltiplos provedores (Pino, Winston) e backends de observabilidade (Loki, Elastic, Datadog e CloudWatch), permitindo integrações plug-and-play.
     \item Implementou correlação de traces, mascaramento automático de dados sensíveis e módulos independentes com mais de 80\% de cobertura de testes, substituindo implementações legadas fortemente acopladas.
     \item Liderou o projeto e a implementação de uma solução de assinatura de requisições com Ed25519 para autenticação entre serviços, eliminando vulnerabilidades identificadas em testes de invasão.
@@ -70,9 +94,10 @@ Experiência com integrações de APIs, pipelines de dados e processamento de gr
 \begin{itemize}[leftmargin=*, itemsep=2pt]
     \item Desenvolveu um microsserviço seguro de assinatura digital utilizando Spring Boot e Bouncy Castle, em conformidade com os padrões da ICP-Brasil.
     \item Desenvolveu pipelines escaláveis para processamento de áudio utilizando Python, AWS Lambda e S3, alcançando 95\% de precisão e reduzindo em 70\% a revisão manual.
-    \item Reduziu a latência em 65\% (7s $\rightarrow$ 2.5s) por meio de otimizações em arquitetura serverless e containers.
+    \item Reduziu a latência em 65\% (7s para 2,5s) por meio de otimizações em arquitetura serverless e containers.
     \item Containerizou microsserviços utilizando Docker e AWS ECS, aumentando a confiabilidade em 30\% e reduzindo o tempo de deploy em 40\%.
     \item Desenvolveu um sistema de validação de apontamentos de jornada utilizando Node.js, TypeScript e PostgreSQL, reduzindo erros de auditoria em 60\%.
+    \item Utilizou Kafka como base da comunicação assíncrona entre microsserviços, desacoplando fluxos síncronos, com Kubernetes como camada de orquestração para o deploy e a escalabilidade desses serviços.
 \end{itemize}
 
 \textbf{Desenvolvedor Full Stack} \hfill Set 2023 -- Dez 2024 \\
@@ -82,6 +107,23 @@ Experiência com integrações de APIs, pipelines de dados e processamento de gr
     \item Melhorou o desempenho do aplicativo mobile desenvolvido em React Native e Expo, reduzindo o tempo de carregamento em 40\%.
     \item Projetou uma arquitetura offline-first, reduzindo em 50\% o tempo de sincronização em cenários de baixa conectividade.
     \item Otimizou consultas GraphQL com cache Redis, reduzindo a latência em 35\% e a carga no banco de dados em 45\%.
+    \item Utilizou Kafka como base da comunicação assíncrona entre microsserviços, desacoplando fluxos síncronos, com Kubernetes como camada de orquestração para o deploy e a escalabilidade desses serviços.
+\end{itemize}
+
+\textbf{Desenvolvedor de Software (Estágio)} \hfill Out 2022 -- Set 2023 \\
+\textit{CreditHub, Brasil}
+\begin{itemize}[leftmargin=*, itemsep=2pt]
+    \item Apoiou a plataforma de serviços principal da empresa (Credit Hub), criando e aprimorando serviços com documentação técnica.
+    \item Resolveu problemas do dia a dia da plataforma, mantendo a estabilidade dos serviços.
+\end{itemize}
+
+% Projects
+\section{PROJETOS}
+\begin{itemize}[leftmargin=*, itemsep=2pt]
+    \item \textbf{Toqui:} Aplicativo de gestão de documentos, do backend multi-tenant a um app aprovado nas duas lojas (iOS, Android e web); mais de 1.000 downloads, nota 4,4 na App Store. \href{https://apps.apple.com/br/app/toqui/id6466649690}{App Store} | \href{https://play.google.com/store/apps/details?id=com.toquiapp}{Google Play}
+    \item \textbf{Ruk Sign:} Assinaturas digitais com validade jurídica em conformidade com a ICP-Brasil, com 4 modalidades de assinatura.
+    \item \textbf{Ruk Time:} Controle de ponto com comprovação por foto e áudio e regras de jornada configuráveis.
+    \item \textbf{Live Chat:} Chat em tempo real com presença ao vivo, mensagens de voz e anexos, distribuído em 5 microsserviços.
 \end{itemize}
 
 % Education
@@ -91,6 +133,6 @@ Centro Universitário Eniac -- Guarulhos, Brasil
 
 % Languages
 \section{IDIOMAS}
-Português (Nativo) \quad | \quad Inglês (Intermediário)
+Português (Nativo) \quad | \quad Inglês (Avançado)
 
 \end{document}
